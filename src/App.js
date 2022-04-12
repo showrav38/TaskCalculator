@@ -1,11 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
+import CalcScreen from './components/CalcScreen/CalcScreen';
+import CaclBody from './components/CalcBody/CaclBody';
 
 function App() {
   return (
-    <div>
-      <h1>Project initialized</h1>
-    </div>
+    <>
+      <CalcScreen/>
+      <CaclBody/>
+    </>
   );
 }
 

@@ -1,21 +1,20 @@
 import React from 'react';
 import './Darktheme.css';
 
-/* NEW (START) */
+// set the theme to dark
 const setDark = () => {
   localStorage.setItem('theme', 'dark');
   document.documentElement.setAttribute('data-theme', 'dark');
 };
 
+// set the theme to light
 const setLight = () => {
   localStorage.setItem('theme', 'light');
   document.documentElement.setAttribute('data-theme', 'light');
 };
 
+//now toggle between them
 const toggleTheme= (e) => {
-    console.log(e);
-    console.log(e.target);
-    console.log(e.target.checked);
     if (e.target.checked) {
       setDark();
     } else {
@@ -23,7 +22,7 @@ const toggleTheme= (e) => {
     }
   };
 
-// setDark();
+
 
 const Darktheme = () => {
   return (

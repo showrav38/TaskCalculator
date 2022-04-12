@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import CalcScreen from '../CalcScreen/CalcScreen';
 import './CalcBody.css';
+
 const CaclBody = () => {
   const [preState, setPreState] = useState('');
   const [curState, setCurState] = useState('');
@@ -8,27 +9,28 @@ const CaclBody = () => {
   const [operator, setOperator] = useState(null);
   const [total, setTotal] = useState(false);
 
+  //   for taking the input in screen
   const inputNum = e => {
-    if (curState.includes('.') && e.target.innerText === '.') return;
-
     if (total) {
       setPreState('');
     }
     if (curState === '0') {
       setCurState('');
     }
-
     curState ? setCurState(pre => pre + e.target.innerText) : setCurState(e.target.innerText);
     setTotal(false);
   };
 
+  //if time curState change will update the input as curState
   useEffect(() => {
     setInput(curState);
   }, [curState]);
 
+  //for the first time when app loads
   useEffect(() => {
     setInput('0');
   }, []);
+  
   const operatorType = e => {
     setTotal(false);
     setOperator(e.target.innerText);
@@ -79,7 +81,9 @@ const CaclBody = () => {
         <div className="wrapper">
           <CalcScreen input={input} preState={preState} />
 
-          <div className="btn equal light-gray"onClick={reset}>AC</div>
+          <div className="btn equal light-gray" onClick={reset}>
+            AC
+          </div>
 
           <div className="btn orange" onClick={operatorType}>
             /
@@ -108,7 +112,9 @@ const CaclBody = () => {
           <div className="btn" onClick={inputNum}>
             6
           </div>
-          <div className="btn col2 orange"onClick={operatorType}>+</div>
+          <div className="btn col2 orange" onClick={operatorType}>
+            +
+          </div>
 
           <div className="btn" onClick={inputNum}>
             1

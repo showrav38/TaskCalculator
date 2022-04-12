@@ -1,13 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
 import CalcScreen from './components/CalcScreen/CalcScreen';
 import CaclBody from './components/CalcBody/CaclBody';
+import Darktheme from './components/Darktheme/Darktheme';
 
 function App() {
   return (
     <>
-      <CalcScreen/>
-      <CaclBody/>
+      <Darktheme />
+      <CalcScreen />
+      <CaclBody />
     </>
   );
 }
